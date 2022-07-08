@@ -10,13 +10,13 @@ export default function Nav() {
     <nav>
       <ul className="flex justify-between items-center p-8">
         <li>
-          <span className="material-icons">menu</span>
+          <img className="inline" src="/images/menu.svg" />
         </li>
         <li>
           <img className="inline w-32" src="/images/qunomedical-logo.svg" />
         </li>
         <li>
-          <span className="material-icons">search</span>
+          <img className="inline" src="/images/search.svg" />
         </li>
       </ul>
     </nav>
