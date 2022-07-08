@@ -10,23 +10,13 @@ export default function Nav() {
     <nav>
       <ul className="flex justify-between items-center p-8">
         <li>
-          <Link href="/">
-            <a className="text-blue-500 no-underline">Home</a>
-          </Link>
+          <span className="material-icons">menu</span>
         </li>
-        <ul className="flex justify-between items-center space-x-4">
-          {links.map(({ href, label }) => (
-            <li key={`${href}${label}`}>
-              <a href={href} className="btn-blue no-underline">
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
         <li>
-          <img className="inline mx-2" src="/images/qunomedical-logo.svg"/>
-          <img className="inline w-4 mx-2" src="/images/star.svg"/>
-          <img className="inline w-4 mx-2" src="/images/check.svg"/>
+          <img className="inline w-32" src="/images/qunomedical-logo.svg" />
+        </li>
+        <li>
+          <span className="material-icons">search</span>
         </li>
       </ul>
     </nav>

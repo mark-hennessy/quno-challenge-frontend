@@ -1,3 +1,4 @@
+import "material-icons/iconfont/material-icons.css";
 import { AppProps } from "next/app";
 import Layout from "../components/layout";
 import "../styles/index.css";
