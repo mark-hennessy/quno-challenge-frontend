@@ -1,0 +1,13 @@
+.hidden-scroll-area {
+  overflow-x: scroll;
+
+  /* IE and Edge */
+  -ms-overflow-style: none;
+
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+.hidden-scroll-area::-webkit-scrollbar {
+  display: none;
+}
