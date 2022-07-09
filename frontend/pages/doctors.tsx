@@ -1,4 +1,5 @@
 import { GetServerSideProps, NextPage } from "next";
+import Head from "next/head";
 import { Doctor } from "../@types/Doctor";
 import DoctorList from "../components/DoctorList";
 import FilterTabs from "../components/filterTabs";
@@ -11,6 +12,9 @@ type Props = {
 const DoctorsPage: NextPage<Props> = ({ doctors }) => {
   return (
     <>
+      <Head>
+        <title>Doctors</title>
+      </Head>
       <HeroTextBlock />
       <FilterTabs />
       <DoctorList doctors={doctors} />
