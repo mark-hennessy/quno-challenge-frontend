@@ -1,7 +1,8 @@
-import Link from "next/link";
+import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 
-export default function IndexPage() {
+const IndexPage: NextPage = () => {
   return (
     <>
       <Head>
@@ -16,4 +17,15 @@ export default function IndexPage() {
       </div>
     </>
   );
-}
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    redirect: {
+      destination: "/doctors",
+      permanent: false,
+    },
+  };
+};
+
+export default IndexPage;
