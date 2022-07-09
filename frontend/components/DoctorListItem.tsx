@@ -71,13 +71,21 @@ export default function DoctorListItem({ doctor }: Props) {
           </div>
         </DoctorHighlight>
       </ul>
+      {/* sizer row, first column */}
+      <div className="mb-4" />
+      {/* sizer row, second column */}
+      <div />
       <div className="text-center">
         <div className="text-xs leading-5">starting from</div>
         <div className="text-xs leading-5 font-bold">
           {formatCurrency(doctor.basePrice)}
         </div>
       </div>
-      <div>TODO</div>
+      <div>
+        <button className="w-full h-10 border rounded-md border-cyan-900 text-cyan-900 text-sm leading-4 ">
+          See doctor profile
+        </button>
+      </div>
     </li>
   );
 }
