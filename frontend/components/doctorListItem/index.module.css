@@ -1,0 +1,8 @@
+.doctor-list-item {
+  @apply pb-6;
+}
+
+.doctor-list-item + .doctor-list-item {
+  border-top: 1px solid #cacaca99;
+  @apply pt-4;
+}

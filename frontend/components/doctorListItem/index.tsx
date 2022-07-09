@@ -1,9 +1,11 @@
+import classNames from "classnames";
 import { PropsWithChildren } from "react";
-import { Doctor } from "../@types/Doctor";
-import { formatCurrency } from "../utils/currency";
-import { getAmountWithCounterWord } from "../utils/string";
-import CircularProgressIndicator from "./circularProgressIndicator";
-import Icon from "./icon";
+import { Doctor } from "../../@types/Doctor";
+import { formatCurrency } from "../../utils/currency";
+import { getAmountWithCounterWord } from "../../utils/string";
+import CircularProgressIndicator from "../circularProgressIndicator";
+import Icon from "../icon";
+import styles from "./index.module.css";
 
 type Props = {
   doctor: Doctor;
@@ -16,7 +18,12 @@ function DoctorHighlight({ children }: PropsWithChildren<{}>) {
 export default function DoctorListItem({ doctor }: Props) {
   return (
     <li
-      className="grid gap-x-6 gap-y-4"
+      className={classNames(
+        "grid",
+        "gap-x-6",
+        "gap-y-4",
+        styles["doctor-list-item"]
+      )}
       style={{ gridTemplateColumns: "auto 1fr" }}
     >
       <img className="w-24 h-24" src={doctor.avatarUrl} alt="avatar" />
