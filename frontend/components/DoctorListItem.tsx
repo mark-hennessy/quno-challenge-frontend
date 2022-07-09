@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import { Doctor } from "../@types/Doctor";
 import { getAmountWithCounterWord } from "../utils/string";
+import CircularProgressIndicator from "./circularProgressIndicator";
 import Icon from "./icon";
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
 };
 
 function DoctorHighlight({ children }: PropsWithChildren<{}>) {
-  return <li className="flex items-start">{children}</li>;
+  return <li className="flex items-start mb-1">{children}</li>;
 }
 
 export default function DoctorListItem({ doctor }: Props) {
@@ -33,8 +34,13 @@ export default function DoctorListItem({ doctor }: Props) {
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <div>{doctor.qunoScoreNumber}</div>
-        <div className="text-xs leading-5 text-black font-bold">
+        <CircularProgressIndicator
+          className="mb-2"
+          value={doctor.qunoScoreNumber}
+          maxValue={10}
+          text={doctor.qunoScoreNumber}
+        />
+        <div className="text-base leading-5 text-black font-bold">
           {doctor.qunoScoreText}
         </div>
         <div className="text-xs leading-4 text-trueGray-700 uppercase">
@@ -44,7 +50,10 @@ export default function DoctorListItem({ doctor }: Props) {
       <ul>
         <DoctorHighlight>
           <Icon name="star.svg" alt="star icon" size="sm" />
-          <div>({doctor.reviews.length} reviews)</div>
+          <div>
+            <span className="font-bold">{doctor.ratingsAverage}</span> (
+            {doctor.reviews.length} reviews)
+          </div>
         </DoctorHighlight>
         <DoctorHighlight>
           <Icon name="check.svg" alt="checkmark" size="sm" />
