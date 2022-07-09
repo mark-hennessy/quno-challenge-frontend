@@ -1,5 +1,21 @@
-import HeroTextBlockHighlight from "./heroTextBlockHighlight";
-import HeroTextBlockHighlights from "./heroTextBlockHighlights";
+import { PropsWithChildren } from "react";
+
+function HeroTextBlockHighlights({ children }: PropsWithChildren<{}>) {
+  return <ul className="grid gap-2">{children}</ul>;
+}
+
+function HeroTextBlockHighlight({ text }: { text: string }) {
+  return (
+    <li className="flex items-start">
+      <img
+        className="inline w-6 h-6 mr-3"
+        src="/images/check.svg"
+        alt="checkmark"
+      />
+      <span className="text-lg leading-8 text-white">{text}</span>
+    </li>
+  );
+}
 
 export default function HeroTextBlock() {
   return (
