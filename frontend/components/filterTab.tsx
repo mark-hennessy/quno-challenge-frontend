@@ -22,7 +22,6 @@ export default function FilterTab({ text, selected }: Props) {
             "border-trueGray-300": !selected,
           },
           {
-            "text-black": selected,
             "border-amber-300": selected,
             "bg-amber-300": selected,
           }

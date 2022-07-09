@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import { Doctor } from "../@types/Doctor";
+import { formatCurrency } from "../utils/currency";
 import { getAmountWithCounterWord } from "../utils/string";
 import CircularProgressIndicator from "./circularProgressIndicator";
 import Icon from "./icon";
@@ -40,7 +41,7 @@ export default function DoctorListItem({ doctor }: Props) {
           maxValue={10}
           text={doctor.qunoScoreNumber}
         />
-        <div className="text-base leading-5 text-black font-bold">
+        <div className="text-base leading-5 font-bold">
           {doctor.qunoScoreText}
         </div>
         <div className="text-xs leading-4 text-trueGray-700 uppercase">
@@ -70,7 +71,12 @@ export default function DoctorListItem({ doctor }: Props) {
           </div>
         </DoctorHighlight>
       </ul>
-      <div>TODO</div>
+      <div className="text-center">
+        <div className="text-xs leading-5">starting from</div>
+        <div className="text-xs leading-5 font-bold">
+          {formatCurrency(doctor.basePrice)}
+        </div>
+      </div>
       <div>TODO</div>
     </li>
   );
