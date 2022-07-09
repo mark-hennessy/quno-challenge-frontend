@@ -2,9 +2,9 @@ type Props = {
   text: string;
 };
 
-export default function HeroListItem({ text }: Props) {
+export default function HeroTextBlockHighlight({ text }: Props) {
   return (
-    <li className="flex items-center">
+    <li className="flex items-start">
       <img
         className="inline w-6 h-6 mr-3"
         src="/images/check.svg"

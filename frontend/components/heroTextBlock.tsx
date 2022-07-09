@@ -1,4 +1,5 @@
-import HeroListItem from "./heroListItem";
+import HeroTextBlockHighlight from "./heroTextBlockHighlight";
+import HeroTextBlockHighlights from "./heroTextBlockHighlights";
 
 export default function HeroTextBlock() {
   return (
@@ -6,11 +7,11 @@ export default function HeroTextBlock() {
       <h1 className="font-sans text-5xl leading-tight text-white mb-12">
         FUE Hair Transplant Clinics
       </h1>
-      <ul>
-        <HeroListItem text="Only professionally-vetted doctors" />
-        <HeroListItem text="Personal support service" />
-        <HeroListItem text="Satisfaction & price match guarantee" />
-      </ul>
+      <HeroTextBlockHighlights>
+        <HeroTextBlockHighlight text="Only professionally-vetted doctors" />
+        <HeroTextBlockHighlight text="Personal support service" />
+        <HeroTextBlockHighlight text="Satisfaction & price match guarantee" />
+      </HeroTextBlockHighlights>
     </section>
   );
 }
