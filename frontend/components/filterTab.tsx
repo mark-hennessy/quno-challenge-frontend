@@ -3,9 +3,10 @@ import classNames from "classnames";
 type Props = {
   text: string;
   selected?: boolean;
+  onClick: () => void;
 };
 
-export default function FilterTab({ text, selected }: Props) {
+export default function FilterTab({ text, selected, onClick }: Props) {
   return (
     <li>
       <button
@@ -26,6 +27,7 @@ export default function FilterTab({ text, selected }: Props) {
             "bg-amber-300": selected,
           }
         )}
+        onClick={onClick}
       >
         {text}
       </button>

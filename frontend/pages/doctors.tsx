@@ -1,5 +1,6 @@
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
 import { Doctor } from "../@types/Doctor";
 import DoctorList from "../components/doctorList";
 import FilterTabs from "../components/filterTabs";
@@ -10,14 +11,46 @@ type Props = {
 };
 
 const DoctorsPage: NextPage<Props> = ({ doctors }) => {
+  const [filteredDoctors, setFilteredDoctors] = useState(doctors);
+
+  function filterByBestQunoscore(): void {
+    setFilteredDoctors(
+      [...doctors].sort((d1, d2) => {
+        return d2.qunoScoreNumber - d1.qunoScoreNumber;
+      })
+    );
+  }
+
+  function filterByBestReviews(): void {
+    setFilteredDoctors(
+      [...doctors].sort((d1, d2) => {
+        return d2.ratingsAverage - d1.ratingsAverage;
+      })
+    );
+  }
+
+  function filterByLowestPrice(): void {
+    setFilteredDoctors(
+      [...doctors].sort((d1, d2) => {
+        return d1.basePrice - d2.basePrice;
+      })
+    );
+  }
+
   return (
     <>
       <Head>
         <title>Doctors</title>
       </Head>
       <HeroTextBlock />
-      <FilterTabs />
-      <DoctorList doctors={doctors} />
+      <FilterTabs
+        filterOptions={[
+          { text: "Best Qunoscore", onClick: filterByBestQunoscore },
+          { text: "Best reviews", onClick: filterByBestReviews },
+          { text: "Lowest price", onClick: filterByLowestPrice },
+        ]}
+      />
+      <DoctorList doctors={filteredDoctors} />
     </>
   );
 };
