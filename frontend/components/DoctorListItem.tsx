@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import { Doctor } from "../@types/Doctor";
+import { getAmountWithCounterWord } from "../utils/string";
 import Icon from "./icon";
 
 type Props = {
@@ -55,6 +56,20 @@ export default function DoctorListItem({ doctor }: Props) {
           <DoctorHighlight>
             <Icon name="star.svg" alt="star icon" size="sm" />
             <div>({doctor.reviews.length} reviews)</div>
+          </DoctorHighlight>
+          <DoctorHighlight>
+            <Icon name="check.svg" alt="checkmark" size="sm" />
+            <div>
+              {getAmountWithCounterWord(doctor.treatmentsLastYear, "treatment")}{" "}
+              last year
+            </div>
+          </DoctorHighlight>
+          <DoctorHighlight>
+            <Icon name="check.svg" alt="checkmark" size="sm" />
+            <div>
+              {getAmountWithCounterWord(doctor.yearsExperience, "year")} of
+              experience
+            </div>
           </DoctorHighlight>
         </ul>
       </DoctorListItemRow>
