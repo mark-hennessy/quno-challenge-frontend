@@ -1,5 +1,5 @@
 import { Doctor } from "../@types/Doctor";
-import DoctorListItem from "./DoctorListItem";
+import DoctorListItem from "./doctorListItem";
 
 type Props = {
   doctors: Doctor[];

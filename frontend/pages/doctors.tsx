@@ -1,7 +1,7 @@
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { Doctor } from "../@types/Doctor";
-import DoctorList from "../components/DoctorList";
+import DoctorList from "../components/doctorList";
 import FilterTabs from "../components/filterTabs";
 import HeroTextBlock from "../components/heroTextBlock";
 

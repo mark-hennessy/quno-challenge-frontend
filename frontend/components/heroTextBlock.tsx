@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+import Icon from "./icon";
 
 function HeroTextBlockHighlights({ children }: PropsWithChildren<{}>) {
   return <ul className="grid gap-2">{children}</ul>;
@@ -7,11 +8,7 @@ function HeroTextBlockHighlights({ children }: PropsWithChildren<{}>) {
 function HeroTextBlockHighlight({ text }: { text: string }) {
   return (
     <li className="flex items-start">
-      <img
-        className="inline w-6 h-6 mr-3"
-        src="/images/check.svg"
-        alt="checkmark"
-      />
+      <Icon name="check.svg" alt="checkmark" size="md" />
       <span className="text-lg leading-8 text-white">{text}</span>
     </li>
   );

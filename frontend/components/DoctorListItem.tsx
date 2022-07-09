@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import { Doctor } from "../@types/Doctor";
+import Icon from "./icon";
 
 type Props = {
   doctor: Doctor;
@@ -33,11 +34,7 @@ export default function DoctorListItem({ doctor }: Props) {
             {doctor.name}
           </div>
           <div className="flex items-center">
-            <img
-              className="inline w-4 h-4 mr-2"
-              src="/images/map-outline.svg"
-              alt="address"
-            />
+            <Icon name="map-outline.svg" alt="address" size="xs" />
             <span className="text-xs leading-5 text-trueGray-700">
               {[doctor.city, doctor.country].join(", ")}
             </span>
@@ -56,11 +53,7 @@ export default function DoctorListItem({ doctor }: Props) {
         </div>
         <ul>
           <DoctorHighlight>
-            <img
-              className="inline w-5 h-5 mr-2"
-              src="/images/star.svg"
-              alt="star icon"
-            />
+            <Icon name="star.svg" alt="star icon" size="sm" />
             <div>({doctor.reviews.length} reviews)</div>
           </DoctorHighlight>
         </ul>
