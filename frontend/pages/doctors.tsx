@@ -55,9 +55,16 @@ const DoctorsPage: NextPage<Props> = ({ doctors }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const res = await fetch(`http://localhost:4000/`);
-  const doctors = (await res.json()) as Doctor[];
+export const getServerSideProps: GetServerSideProps<Props> = async ({
+  res,
+}) => {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
+  const doctorsResponse = await fetch(`http://localhost:4000/`);
+  const doctors = (await doctorsResponse.json()) as Doctor[];
   return { props: { doctors } };
 };
 
