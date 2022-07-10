@@ -2,6 +2,7 @@ import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { Doctor } from "../../@types/Doctor";
 import ProfileContent from "../../components/profileContent";
+import ReviewCards from "../../components/reviewCards";
 
 type Props = {
   doctor: Doctor;
@@ -19,6 +20,7 @@ const DoctorPage: NextPage<Props> = ({ doctor }) => {
         alt="avatar"
       />
       <ProfileContent doctor={doctor} />
+      <ReviewCards reviews={doctor.reviews} />
     </>
   );
 };
