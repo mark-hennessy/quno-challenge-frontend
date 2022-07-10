@@ -8,10 +8,12 @@ const IndexPage: NextPage = () => {
       <Head>
         <title>Home</title>
       </Head>
-      <div className="py-20">
+      <div className="py-20 bg-gray-200">
         <h1 className="text-5xl text-center">
           <Link href="/doctors">
-            <a>Find doctors!</a>
+            <a className="underline text-blue-600 hover:text-blue-800">
+              Find doctors!
+            </a>
           </Link>
         </h1>
       </div>

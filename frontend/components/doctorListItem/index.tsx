@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import Link from "next/link";
 import { PropsWithChildren } from "react";
 import { Doctor } from "../../@types/Doctor";
 import { formatCurrency } from "../../utils/currency";
@@ -89,9 +90,11 @@ export default function DoctorListItem({ doctor }: Props) {
         </div>
       </div>
       <div>
-        <button className="w-full h-10 border rounded-md border-cyan-900 text-cyan-900 text-sm leading-4 ">
-          See doctor profile
-        </button>
+        <Link href={`/doctors/${encodeURIComponent(doctor.slug)}`}>
+          <a className="flex items-center justify-center w-full h-10 border rounded-md border-cyan-900 text-cyan-900 text-sm leading-4">
+            See doctor profile
+          </a>
+        </Link>
       </div>
     </li>
   );
