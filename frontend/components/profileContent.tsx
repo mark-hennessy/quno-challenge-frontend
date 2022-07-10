@@ -16,7 +16,7 @@ function DoctorHighlight({ children }: PropsWithChildren<{}>) {
 export default function ProfileContent({ doctor }: Props) {
   return (
     <section className="px-5 py-8 bg-cyan-900 text-white">
-      <div className="text-sm leading-4 text-amber-300 font-bold uppercase">
+      <div className="mb-1 text-sm leading-4 text-amber-300 font-bold uppercase">
         Hair Transplant
       </div>
       <h1 className="font-sans text-4xl leading-10 mb-2">{doctor.name}</h1>
@@ -61,6 +61,14 @@ export default function ProfileContent({ doctor }: Props) {
           </div>
         </DoctorHighlight>
       </ul>
+      <div className="mt-10 grid gap-2">
+        <a className="flex items-center justify-center w-full h-12 rounded-md bg-white text-cyan-900 text-lg leading-6">
+          Get consultation
+        </a>
+        <a className="flex items-center justify-center w-full h-12 rounded-md bg-amber-300 text-trueGray-700 text-lg leading-6">
+          Book appointment
+        </a>
+      </div>
     </section>
   );
 }
