@@ -18,5 +18,5 @@ export default function Icon({ name, alt, size }: Props) {
     return <img {...sharedProps} className="inline w-5 h-5 mr-2" />;
   }
 
-  return <img {...sharedProps} className="inline w-6 h-6 mr-3" />;
+  return <img {...sharedProps} className="inline w-6 h-6 mr-2" />;
 }
