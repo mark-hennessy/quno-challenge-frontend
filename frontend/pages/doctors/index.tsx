@@ -1,10 +1,10 @@
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
-import { Doctor } from "../@types/Doctor";
-import DoctorList from "../components/doctorList";
-import FilterTabs from "../components/filterTabs";
-import HeroTextBlock from "../components/heroTextBlock";
+import { Doctor } from "../../@types/Doctor";
+import DoctorList from "../../components/doctorList";
+import FilterTabs from "../../components/filterTabs";
+import HeroTextBlock from "../../components/heroTextBlock";
 
 type Props = {
   doctors: Doctor[];
@@ -63,7 +63,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
     "public, s-maxage=10, stale-while-revalidate=59"
   );
 
-  const doctorsResponse = await fetch(`http://localhost:4000/`);
+  const doctorsResponse = await fetch("http://localhost:4000/");
   const doctors = (await doctorsResponse.json()) as Doctor[];
   return { props: { doctors } };
 };
