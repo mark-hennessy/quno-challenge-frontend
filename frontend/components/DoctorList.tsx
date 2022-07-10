@@ -1,4 +1,5 @@
 import { Doctor } from "../@types/Doctor";
+import { DOCTOR_LIST_TEST_ID } from "../constants/testIds";
 import DoctorListItem from "./doctorListItem";
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
 export default function DoctorList({ doctors }: Props) {
   return (
     <section className="px-5">
-      <ul>
+      <ul data-testid={DOCTOR_LIST_TEST_ID}>
         {doctors.map((doctor) => {
           return <DoctorListItem key={doctor.slug} doctor={doctor} />;
         })}

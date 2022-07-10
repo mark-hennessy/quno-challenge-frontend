@@ -27,6 +27,7 @@ export default function FilterTab({ text, selected, onClick }: Props) {
             "bg-amber-300": selected,
           }
         )}
+        aria-selected={selected}
         onClick={onClick}
       >
         {text}
