@@ -11,13 +11,7 @@ export default function FilterTab({ text, selected, onClick }: Props) {
     <li>
       <button
         className={classNames(
-          "border",
-          "rounded-3xl",
-          "text-sm",
-          "leading-5",
-          "px-5",
-          "py-3",
-          "whitespace-no-wrap",
+          "border rounded-3xl text-sm leading-5 px-5 py-3 whitespace-no-wrap",
           {
             "text-trueGray-700": !selected,
             "border-trueGray-300": !selected,

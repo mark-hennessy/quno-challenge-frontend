@@ -17,7 +17,7 @@ export default function AddressLabel({ doctor, hasDarkBackground }: Props) {
       />
 
       <span
-        className={classNames("text-xs", "leading-5", {
+        className={classNames("text-xs leading-5", {
           "text-trueGray-700": !hasDarkBackground,
           "text-lightBlue-custom": hasDarkBackground,
         })}

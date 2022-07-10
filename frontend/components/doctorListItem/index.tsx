@@ -20,12 +20,7 @@ function DoctorHighlight({ children }: PropsWithChildren<{}>) {
 export default function DoctorListItem({ doctor }: Props) {
   return (
     <li
-      className={classNames(
-        "grid",
-        "gap-x-6",
-        "gap-y-4",
-        styles["doctor-list-item"]
-      )}
+      className={classNames("grid gap-x-6 gap-y-4", styles["doctor-list-item"])}
       style={{ gridTemplateColumns: "auto 1fr" }}
     >
       <img className="w-24 h-24" src={doctor.avatarUrl} alt="avatar" />
