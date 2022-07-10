@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import { Doctor } from "../@types/Doctor";
 import AddressLabel from "./addressLabel";
+import CircularProgressIndicator from "./circularProgressIndicator";
 import Icon from "./icon";
 
 type Props = {
@@ -17,6 +18,23 @@ export default function ProfileContent({ doctor }: Props) {
         {doctor.name}
       </h1>
       <AddressLabel doctor={doctor} hasDarkBackground />
+      <div className="mt-10 mb-5 flex items-center">
+        <CircularProgressIndicator
+          className="mr-3"
+          value={doctor.qunoScoreNumber}
+          maxValue={10}
+          text={doctor.qunoScoreNumber}
+          hasDarkBackground
+        />
+        <div>
+          <div className="text-base leading-6 font-bold text-amber-300">
+            {doctor.qunoScoreText}
+          </div>
+          <div className="text-xs leading-4 text-trueGray-300 uppercase">
+            Qunoscore
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

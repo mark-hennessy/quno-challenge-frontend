@@ -5,6 +5,7 @@ type Props = {
   value: number;
   maxValue: number;
   text: string | number;
+  hasDarkBackground?: boolean;
   className?: string;
 };
 
@@ -14,6 +15,7 @@ export default function CircularProgressIndicator({
   value,
   maxValue,
   text,
+  hasDarkBackground,
   className,
 }: Props) {
   return (
@@ -21,9 +23,9 @@ export default function CircularProgressIndicator({
       <CircularProgressbar
         styles={buildStyles({
           textSize: "30px",
-          textColor: "#000",
-          trailColor: "#FFCA5833",
-          pathColor: "#FFCA58",
+          textColor: hasDarkBackground ? "#fcd34d" : "#000",
+          trailColor: "#ffca5833",
+          pathColor: "#ffca58",
         })}
         value={value}
         maxValue={maxValue}

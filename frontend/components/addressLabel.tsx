@@ -19,7 +19,7 @@ export default function AddressLabel({ doctor, hasDarkBackground }: Props) {
       <span
         className={classNames("text-xs", "leading-5", {
           "text-trueGray-700": !hasDarkBackground,
-          "text-lightBlue-300": hasDarkBackground,
+          "text-lightBlue-custom": hasDarkBackground,
         })}
       >
         {[doctor.city, doctor.country].join(", ")}
