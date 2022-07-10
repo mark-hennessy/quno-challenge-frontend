@@ -9,7 +9,14 @@ function getStars(count: number) {
   const stars: JSX.Element[] = [];
   for (let i = 0; i < count; i++) {
     stars.push(
-      <Icon className="mr-1" name="star.svg" alt="star icon" size="sm" fitted />
+      <Icon
+        key={i}
+        className="mr-1"
+        name="star.svg"
+        alt="star icon"
+        size="sm"
+        fitted
+      />
     );
   }
 
