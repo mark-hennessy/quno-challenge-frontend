@@ -1,6 +1,7 @@
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { Doctor } from "../../@types/Doctor";
+import ProfileContent from "../../components/profileContent";
 
 type Props = {
   doctor: Doctor;
@@ -12,7 +13,7 @@ const DoctorPage: NextPage<Props> = ({ doctor }) => {
       <Head>
         <title>Doctor Profile</title>
       </Head>
-      <h1>{doctor.name}</h1>
+      <ProfileContent doctor={doctor} />
     </>
   );
 };

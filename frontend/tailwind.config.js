@@ -11,6 +11,7 @@ module.exports = {
         "amber-300": "#fcd34d",
         "trueGray-300": "#d4d4d4",
         "trueGray-700": "#404040",
+        "lightBlue-300": "#7dd3fc",
       },
     },
   },

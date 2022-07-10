@@ -4,6 +4,7 @@ import { PropsWithChildren } from "react";
 import { Doctor } from "../../@types/Doctor";
 import { formatCurrency } from "../../utils/currency";
 import { getAmountWithCounterWord } from "../../utils/string";
+import AddressLabel from "../addressLabel";
 import CircularProgressIndicator from "../circularProgressIndicator";
 import Icon from "../icon";
 import styles from "./index.module.css";
@@ -35,12 +36,7 @@ export default function DoctorListItem({ doctor }: Props) {
         <div className="text-2xl leading-7 text-cyan-900 mb-2">
           {doctor.name}
         </div>
-        <div className="flex items-center">
-          <Icon name="map-outline.svg" alt="address" size="xs" />
-          <span className="text-xs leading-5 text-trueGray-700">
-            {[doctor.city, doctor.country].join(", ")}
-          </span>
-        </div>
+        <AddressLabel doctor={doctor} />
       </div>
       <div className="flex flex-col items-center">
         <CircularProgressIndicator
