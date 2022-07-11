@@ -31,10 +31,10 @@ describe("FilterTabs", () => {
   });
 
   it("toggles selected filter tab", () => {
-    expect(filterTabB).toHaveAttribute("aria-selected", "false");
+    expect(filterTabB).toHaveAttribute("aria-pressed", "false");
     expect(filterTabB).not.toHaveClass("bg-amber-300");
     fireEvent.click(filterTabB);
-    expect(filterTabB).toHaveAttribute("aria-selected", "true");
+    expect(filterTabB).toHaveAttribute("aria-pressed", "true");
     expect(filterTabB).toHaveClass("bg-amber-300");
   });
 });
