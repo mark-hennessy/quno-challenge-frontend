@@ -1,6 +1,7 @@
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { Doctor } from "../../@types/Doctor";
+import DoctorImageGallery from "../../components/doctorImageGallery";
 import ProfileContent from "../../components/profileContent";
 import ReviewCards from "../../components/reviewCards";
 
@@ -14,11 +15,7 @@ const DoctorPage: NextPage<Props> = ({ doctor }) => {
       <Head>
         <title>Doctor Profile</title>
       </Head>
-      <img
-        className="w-full h-56 object-cover"
-        src={doctor.avatarUrl}
-        alt="avatar"
-      />
+      <DoctorImageGallery doctor={doctor} />
       <ProfileContent doctor={doctor} />
       <ReviewCards reviews={doctor.reviews} />
     </>
