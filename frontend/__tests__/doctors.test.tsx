@@ -12,6 +12,13 @@ describe("doctors page", () => {
     render(<DoctorsPage doctors={doctors} />);
   });
 
+  it("shows unfiltered results", () => {
+    const topResult = screen.getByTestId(DOCTOR_LIST_TEST_ID).firstChild;
+
+    expect(topResult).toHaveTextContent("Dr. Lay Raphael");
+    expect(topResult).toHaveTextContent("8.5");
+  });
+
   it("supports filtering by best Qunoscore", () => {
     const bestQunoscoreFilterTab = screen.getByRole("button", {
       name: /Best Qunoscore/i,
