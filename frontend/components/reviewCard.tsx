@@ -33,14 +33,21 @@ export default function ReviewCard({ review }: Props) {
         boxShadow: "0px 2px 6px 0px #48484833",
       }}
     >
-      <div>
-        <div className="text-xl leading-6 text-cyan-900 font-bold">
-          {review.patientName}
+      <div className="flex items-start">
+        <img
+          className="w-16 h-16 object-contain mr-3"
+          src="/images/reviewer-profile-picture.png"
+          alt="profile picture"
+        />
+        <div>
+          <div className="text-xl leading-6 text-cyan-900 font-bold">
+            {review.patientName}
+          </div>
+          <div className="text-base leading-5 text-cyan-900">
+            {review.country}
+          </div>
+          <div className="mb-5">{getStars(5)}</div>
         </div>
-        <div className="text-base leading-5 text-cyan-900">
-          {review.country}
-        </div>
-        <div className="mb-5">{getStars(5)}</div>
       </div>
       <div className="text-base leading-6">
         <div className="font-bold">{review.headline}</div>
